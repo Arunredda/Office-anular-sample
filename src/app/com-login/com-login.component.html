@@ -1,0 +1,44 @@
+<br>
+<h3 style="text-align: center; ">HR Login </h3>  
+
+
+<br>
+
+<div style="text-align: -webkit-center; ">
+
+    <div *ngIf="message">
+        <div style=" border: 1px solid #ccc;background-color: burlywood;"> {{message}}</div>
+        <br>
+        </div>
+        
+  <form [formGroup]="loginForm" > 
+
+  
+
+    <table>
+  <tr>  
+               
+    <td> <label for="name">User  Name  * </label><input type="text"  formControlName="userName" >   </td>  
+    </tr>
+    <tr>        
+                
+    <td><label for="name"> Password *                                                                      </label>   <input type="text"  formControlName="passWord"  required>  </td>
+                          
+</tr>
+    
+        <br>
+        <tr>
+         
+          
+      <td>
+    
+          <button (click)="login()" style="background-color: chocolate;">Login</button> 
+        </td>
+      </tr>
+        </table>
+      </form>  
+  
+    </div>
+   
+
+ 

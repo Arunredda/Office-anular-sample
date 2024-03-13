@@ -1,0 +1,55 @@
+<app-app-menu></app-app-menu>
+<br>
+<h3 style="text-align: center; ">Create Employe</h3>  
+
+<br>
+
+  <form [formGroup]="employeforms" > 
+
+    <table style="width: 80%; text-align: center;" >
+  <tr>
+    
+            <td>  <label for="name">First Name  * </label>  </td>
+            <td> <input type="text"  formControlName="empName" >   </td>  
+            
+                      
+              <td><label for="name"> Email ID  </label> </td> 
+              <td><input type="text"  formControlName="empEmailID" >  </td>
+                
+           
+</tr>
+
+            <tr>  
+              <td> <label for="name"> Designation   </label>  </td>
+               <td><input type="text" formControlName="empDesignation"  > </td>
+               
+              <td><label for="name"> Location   </label> </td> 
+              <td><input type="text" formControlName="empLocation"   >  </td>
+             
+              
+            </tr> 
+       
+      
+          <tr>    
+            <td><label for="name"> Mobile Number   </label>  </td>
+              <td> <input type="text" formControlName="empMobileNumber"  >  </td>
+         
+          
+        </tr>
+    
+        <br>
+        <tr>
+          <td></td>
+          
+      <td>
+    
+          <button (click)="submit()" style="background-color: chocolate;">Submit</button> 
+        </td>
+      </tr>
+        </table>
+      </form>  
+  
+  
+   
+
+ 

@@ -1,0 +1,21 @@
+<app-app-menu></app-app-menu>
+
+
+<h5>Create Student</h5>
+
+
+<form  [formGroup] ="studentForm">
+
+    Student Name
+    <input type="text" formControlName="studentName"/>
+
+    Student Email Id
+    <input type="text" formControlName="emailId"/>
+
+    Student Last Name
+    <input type="text" formControlName="lastName"/>
+
+
+    <button (click) ="createStudent()"> Create Student</button>
+
+</form>

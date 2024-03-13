@@ -1,0 +1,122 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    border: 1px solid #0f0f0f;
+    text-align: left;
+    padding: 8px;
+    background-color: burlywood;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+</style>
+
+<app-app-menu></app-app-menu>
+
+<!-- <h5> Employeer Create Sucessfully</h5> -->
+<div *ngIf="!edit">
+  <h3 style="text-align: center;">Employe List</h3>
+  <table>
+    <thead>
+      <th>First Name</th>
+      <th>Email Id</th>
+      <th>Designation</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </thead>
+    <tr *ngFor="let empNames of employe" style="border: 1px solid rgb(6, 10, 6)">
+      <td>
+        {{empNames.empName}}
+      </td>
+      <td>
+        {{empNames.empEmailID}}
+      </td>
+      <td>
+        {{empNames.empDesignation}}
+      </td>
+
+      <td>
+        <button (click)="editEmploye(empNames.id)"><i class="fa fa-edit" style="font-size:20px"></i></button>
+
+
+      </td>
+      <td>
+        <a (click)="deleteEmploye(empNames.id)"><i class="fa fa-trash-o" style="font-size:24px"></i></a>
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+
+<div *ngIf="edit">
+<br>
+  <h3 style="text-align: center;">Update Employe </h3>
+<br>
+  <form [formGroup]="employeforms">
+
+    <table style="width: 80%; text-align: center;">
+      <tr>
+
+        <td> <label for="name">First Name * </label> </td>
+        <td> <input type="text" formControlName="empName" [(ngModel)]="emploe.empName"> </td>
+
+
+        <td><label for="name"> Email ID </label> </td>
+        <td><input type="text" formControlName="empEmailID" [(ngModel)]="emploe.empEmailID"> </td>
+
+
+      </tr>
+
+      <tr>
+        <td> <label for="name"> Designation </label> </td>
+        <td><input type="text" formControlName="empDesignation" [(ngModel)]="emploe.empDesignation"> </td>
+
+        <td><label for="name"> Location </label> </td>
+        <td><input type="text" formControlName="empLocation" [(ngModel)]="emploe.empLocation"> </td>
+
+
+      </tr>
+              <!-- <div [hidden]="employeforms" [(ngModel)]="emploe.id"></div> -->
+
+      <tr>
+        <td><label for="name"> Mobile Number </label> </td>
+        <td> <input type="text" formControlName="empMobileNumber" [(ngModel)]="emploe.empMobileNumber"> </td>
+
+
+         
+              
+      </tr>
+
+
+      <!-- {{emploe.id}} -->
+      
+
+      <br>
+      <tr>
+        <td></td>
+
+        <td>
+
+           <button (click)="update(emploe.id)" style="background-color: chocolate;">Submit</button>  
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
