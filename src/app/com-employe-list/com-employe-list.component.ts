@@ -32,12 +32,22 @@ export class ComEmployeListComponent  implements OnInit{
    })
   }
 
+  nams:[]=[];
+
+  toc:String | any
 
   getEmpoyeList(){
+    debugger;
     this.edit=false;
     this.empService.getEmployeList().subscribe( (data) =>{
       console.log(data);
          this.employe=data;
+
+
+        
+
+        // this.toc= localStorage.getItem("jwbTocken")
+        //console.log(this.toc)
     },
     (error) =>{
       

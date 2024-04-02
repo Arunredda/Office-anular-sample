@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,10 @@ import { ComLoginComponent } from './com-login/com-login.component';
 import { AppMenuComponent } from './app-menu/app-menu.component';  
 import { TockenIntersaptorService } from './tocken-intersaptor.service';
 import { ComcreateStudentComponent } from './comcreate-student/comcreate-student.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { MydirectDirective } from './mydirect.directive';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
+import { CommonCompontComponent } from './common-compont/common-compont.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { ComcreateStudentComponent } from './comcreate-student/comcreate-student
          ComWlcomeComponent,
          ComLoginComponent,
          AppMenuComponent,
-         ComcreateStudentComponent
+         ComcreateStudentComponent,
+         StudentListComponent,
+         MydirectDirective,
+         CommonCompontComponent
   ],
   imports: [
     BrowserModule,
@@ -42,5 +49,13 @@ import { ComcreateStudentComponent } from './comcreate-student/comcreate-student
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:TockenIntersaptorService, multi:true}],
   bootstrap: [AppComponent]
+
+
+  // schemas: [
+  //   [NO_ERRORS_SCHEMA]
+
+  //    // Add this if 'app-com-wlcome' is a Web Component
+  //   // NO_ERRORS_SCHEMA // Add this if you want to allow any property without validation
+  // ],
 })
 export class AppModule { }

@@ -44,7 +44,7 @@ export class ComEployeeComponent implements OnInit{
   this.employeebo.empLocation=this.employeforms.value.empLocation;
   this.employeebo.empMobileNumber=this.employeforms.value.empMobileNumber;
 
-  
+  debugger;
   this.emploueService.saveEmployee(this.employeebo). 
   subscribe(
     
@@ -58,6 +58,7 @@ export class ComEployeeComponent implements OnInit{
   (error) =>{
     console.log("Arunkumar"+error);
     this.router.navigate(['ceateEmploye']);
+    
   }
   );
   

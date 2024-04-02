@@ -23,15 +23,28 @@ export class TockenIntersaptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    const  tockens= sessionStorage.getItem("jwbTocken");
+    //const  tockens= sessionStorage.getItem("jwbTocken");
 
-console.log("my----- "+tockens)
+    const  tockens= localStorage.getItem("jwbTocken");
 
+console.log("my HttpInterceptor----- "+tockens)
+debugger;
 req = req.clone({
-
+  
       setHeaders: {
-        Authorization: `Bearer ${tockens}` 
-      }
+        
+        Authorization: `Bearer ${tockens}` ,
+        applicatoin:`Office`
+      },
+
+      //passing adding value in interseptor
+      // body: {
+        
+      //   id: '10',
+      //   userNamess:'HR@gmail.com'
+      // }
+
+      //params: req.params.set('paramName', 'paramValue10')
 
     })
 

@@ -13,6 +13,8 @@ import { TockenIntersaptorService } from '../tocken-intersaptor.service';
 })
 export class ComLoginComponent implements OnInit {
 
+  // inputsss:String="Input Dec";
+
   loginbo: Loginbo = new Loginbo();
 
   respoceBO: RespoceBO = new RespoceBO;
@@ -20,6 +22,8 @@ export class ComLoginComponent implements OnInit {
   loginForm: FormGroup = new FormGroup({});
 
   message: String | any;
+
+  
 
   constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router, private tockenIntersaptorService: TockenIntersaptorService) { }
 
@@ -40,13 +44,21 @@ export class ComLoginComponent implements OnInit {
     this.loginService.checkLogin(this.loginbo).subscribe(
       
       (data => {
+
+
+
+       
       this.respoceBO = data;
       this.message = this.respoceBO.message;
 
       console.log(this.respoceBO.role)
       // this.tockenIntersaptorService.addTocken(this.respoceBO)
 
-      sessionStorage.setItem("jwbTocken", this.respoceBO.jwbTocken)
+      //sessionStorage.setItem("jwbTocken", this.respoceBO.jwbTocken)
+      localStorage.setItem("jwbTocken",this.respoceBO.jwbTocken);
+
+      console.log("AF --"+this.respoceBO.jwbTocken)
+      
       sessionStorage.setItem("role", this.respoceBO.role)
       this.router.navigate(['welcome'])
 

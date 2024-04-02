@@ -9,6 +9,10 @@ import { baseUrl } from 'src/assets/append';
 })
 export class StudentserviceService {
 
+  getStudentList():Observable<any> {
+    return this.http.get(baseUrl.baseUrls+"getStudentList");
+  }
+
 
   createStudent(studentBO: StudenBO):Observable<any> {
    return this.http.post(baseUrl.baseUrls+"creatstuden", studentBO);

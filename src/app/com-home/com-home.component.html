@@ -1,5 +1,31 @@
 
-
+<div appMydirect>
+<h1>Custom Directive</h1>
+</div>
 
 <p style="text-align: center;color: rgb(114, 30, 210);">{{titel}}</p>
+
+
+<div>
+    <label>Two Way Binding - </label>
+<input type="text" [(ngModel)]="titel">
+
+<br>
+<br>
+<br>
+
+<form>
+    
+
+    <button (click)="PassCTC()"> Pass the value CTC </button>
+
+</form>
+
+<!-- //<app-common-compont [message]="messageToChild"></app-common-compont> -->
+
+
+
+
+</div>
+
 
